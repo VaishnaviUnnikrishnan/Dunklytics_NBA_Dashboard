@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFDDC1, #FFAB91);
+            color: black;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(255, 172, 120, 0.2);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar h3 {
+            color: #8B5E3C;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: rgba(255, 172, 120, 0.2);
+            box-shadow: 0px 0px 8px #FFAB91;
+            transform: scale(1.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 200px 20px 150px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header:hover {
+            transform: scale(1.02);
+        }
+
+        .header h1 {
+            font-size: 50px;
+            font-weight: 700;
+            color: #8B5E3C;
+            text-shadow: 0px 3px 8px rgba(255, 172, 120, 0.6);
+        }
+
+        .header p {
+            font-size: 18px;
+            font-weight: 400;
+            color: black;
+            max-width: 60%;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 80px 10%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            box-shadow: 0px 10px 50px rgba(255, 172, 120, 0.4);
+            border-radius: 15px;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about:hover {
+            transform: scale(1.03);
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            color: #8B5E3C;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: black;
+            margin-top: 20px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(255, 172, 120, 0.3);
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-img img:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: black;
+            background: rgba(255, 172, 120, 0.5);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h3>NBA Dashboard</h3>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/player-insights">Player Insights</a></li>
+            <li><a href="/team-insights">Team Insights</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="header">
+        <h1>NBA Dashboard</h1>
+        <p>Get in-depth analytics and insights about NBA players and teams.</p>
+    </div>
+
+    <div id="about" class="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+             <p>Welcome to the NBA Dashboard! Our platform provides data-driven insights into player and team performance, helping fans, analysts, and professionals make informed decisions.</p>
+        <p>With interactive visualizations and real-time data, you can explore the latest trends and stats in the NBA world.</p>
+        <p>Whether you're a die-hard basketball fan, a fantasy league enthusiast, or a professional analyst, our dashboard equips you with the tools to dive deep into historical and current NBA statistics.</p>
+        <p>We utilize cutting-edge data science techniques, including machine learning and predictive analytics, to bring you advanced metrics like player efficiency ratings, win shares, and performance trends.</p>
+        <p>Our mission is to make NBA data accessible, engaging, and insightful for everyone—from casual fans to industry experts. Explore, analyze, and gain the competitive edge with the NBA Dashboard!</p>
+        </div>
+        <div class="about-img">
+            <img src="https://s1.dmcdn.net/v/SwkOy1WX63W7cu73l/x720" alt="About Us Image">
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 NBA Dashboard | Powered by Data
+    </div>
+</body>
+</html>

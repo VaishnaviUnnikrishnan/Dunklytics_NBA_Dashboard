@@ -1,0 +1,156 @@
+{% block content %}
+<h1 class="page-title">Team Insights</h1>
+
+<div class="form-container">
+    <form id="teamForm">
+        <div class="form-group">
+            <label for="team">Select Team:</label>
+            <select id="team" name="team" class="styled-select">
+                {% for team in teams %}
+                <option value="{{ team }}">{{ team }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" class="styled-input" value="2025" min="2020" max="2030">
+        </div>
+
+        <button type="button" class="load-btn" onclick="loadCharts()">Load Charts</button>
+    </form>
+</div>
+
+<div id="chartsContainer">
+    <div class="chart">
+        <h3>Team Statistics</h3>
+        <div class="chart-loader"></div>
+        <img id="teamStatsChart" src="" alt="Team Stats Chart">
+    </div>
+
+    <div class="chart">
+        <h3>Ranking History</h3>
+        <div class="chart-loader"></div>
+        <img id="rankingHistoryChart" src="" alt="Ranking History Chart">
+    </div>
+
+    <div class="chart">
+        <h3>Comparison Chart</h3>
+        <div class="chart-loader"></div>
+        <img id="comparisonChart" src="" alt="Comparison Chart">
+    </div>
+</div>
+
+<script>
+function loadCharts() {
+    const team = document.getElementById('team').value;
+    const year = document.getElementById('year').value;
+
+    document.querySelectorAll('.chart img').forEach(img => img.style.display = 'none');
+    document.querySelectorAll('.chart-loader').forEach(loader => loader.style.display = 'block');
+
+    fetch(`/team-charts?team=${team}&year=${year}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('teamStatsChart').src = `data:image/png;base64,${data.team_stats}`;
+            document.getElementById('rankingHistoryChart').src = `data:image/png;base64,${data.ranking_history}`;
+            document.getElementById('comparisonChart').src = `data:image/png;base64,${data.comparison_chart}`;
+
+            document.querySelectorAll('.chart img').forEach(img => img.style.display = 'block');
+            document.querySelectorAll('.chart-loader').forEach(loader => loader.style.display = 'none');
+        });
+}
+</script>
+
+<style>
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    color: #8B5E3C;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 172, 120, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.styled-select, .styled-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #8B5E3C;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+.load-btn {
+    padding: 10px 15px;
+    background: #FFAB91;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.load-btn:hover {
+    background: #8B5E3C;
+}
+
+#chartsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.chart {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 172, 120, 0.3);
+    backdrop-filter: blur(10px);
+    width: 300px;
+}
+
+.chart img {
+    width: 100%;
+    display: none;
+}
+
+.chart-loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 172, 120, 0.6);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    display: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
