@@ -23,8 +23,11 @@ NBA analytics, machine learning, LSTM, Flask, Power BI, player insights, team ra
 series analysis, data visualization, predictive modeling, deep learning, Kobe Bryant analysis.
 Tech Stack
 • Python (Pandas, NumPy, TensorFlow, Matplotlib)
+
 • Flask (Backend for real-time analytics)
+
 • HTML, CSS, JavaScript (Frontend Integration)
+
 • Power BI (Visualization and dashboarding)
 ![image](https://github.com/user-attachments/assets/499df214-8373-4ee5-98bf-89267ca01184)
 
