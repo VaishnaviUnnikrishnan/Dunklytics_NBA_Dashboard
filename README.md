@@ -14,7 +14,7 @@ This project leverages **machine learning (LSTM models)** and **business intelli
 - **Python**: Pandas, NumPy, TensorFlow, Matplotlib
 - **Flask**: Backend for real-time analytics
 - **Frontend**: HTML, CSS, JavaScript (Power BI integration)
-- **Power BI**: Visualization and dashboarding
+- **Power BI** (Seperate Dashboard) : Visualization and dashboarding
 
 ## Installation & Setup
 1. Clone the repository:
@@ -28,15 +28,13 @@ This project leverages **machine learning (LSTM models)** and **business intelli
    source venv/bin/activate  # Mac/Linux
    venv\Scripts\activate  # Windows
    ```
-3. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
+
    ```
-4. Run Flask application:
+3. Run Flask application:
    ```sh
    python app.py
    ```
-5. Load the Power BI dashboard and connect it to the Flask API for real-time predictions.
+4. Load the Power BI dashboard and connect it to the Flask API for real-time predictions.
 
 ## Contribution Guidelines
 - Fork the repository and create a new branch.
