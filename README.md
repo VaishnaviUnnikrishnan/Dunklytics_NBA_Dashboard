@@ -1,34 +1,60 @@
-Abstract
-The National Basketball Association (NBA) is a league that generates a vast amount of statistical
-data each season, encompassing player performance, team efficiency, and game trends.
-Traditional methods of analyzing player and team performance often fail to capture intricate
-patterns, limiting the ability of analysts, coaches, and enthusiasts to make data-driven decisions.
-This project aims to bridge this gap by leveraging advanced machine learning techniques,
-specifically Long Short-Term Memory (LSTM) models, to predict player rankings, team
-standings, and potential MVP candidates based on historical data from 2010 to 2024. A dedicated
-Kobe Bryant Shot Selection Dashboard is included to provide an in-depth analysis of his
-shooting tendencies, efficiency, and decision-making process, offering valuable insights into one
-of the greatest players in NBA history. The processed dataset, sourced from Kaggle and official
-NBA statistics websites, undergoes data preprocessing and feature engineering to ensure
-accuracy and consistency.
-The integration of Power BI dashboards enhances the analytical experience by enabling
-interactive visualizations of player statistics, team performances, and comparative analytics.
-Furthermore, the LSTM model is deployed within Power BI’s Power Query Editor, allowing for
-real-time predictions and seamless data-driven decision-making.By combining machine learning,
-deep learning, and business intelligence tools, this project empowers analysts and basketball
-professionals with actionable insights that improve team strategies, player scouting, and overall
-game performance.
-Keywords
-NBA analytics, machine learning, LSTM, Flask, Power BI, player insights, team rankings, time
-series analysis, data visualization, predictive modeling, deep learning, Kobe Bryant analysis.
-Tech Stack
-• Python (Pandas, NumPy, TensorFlow, Matplotlib)
+# NBA Analytics & Predictive Modeling with LSTM
 
-• Flask (Backend for real-time analytics)
+## Overview
+This project leverages **machine learning (LSTM models)** and **business intelligence tools (Power BI)** to analyze and predict **NBA player rankings, team standings, and MVP candidates** based on historical data (2010-2024). By integrating deep learning and interactive dashboards, this system provides actionable insights for analysts, coaches, and basketball enthusiasts.
 
-• HTML, CSS, JavaScript (Frontend Integration)
+### **Key Features**
+- **LSTM-Based Predictions:** Predicts **player performance, team standings, and MVP candidates** using time-series analysis.
+- **Kobe Bryant Shot Selection Dashboard:** Analyzes Kobe Bryant’s shooting tendencies, efficiency, and decision-making.
+- **Power BI Integration:** Enables **interactive visualizations** of player statistics, team performance, and historical trends.
+- **Real-Time Analytics with Flask:** Deploys LSTM models within **Power BI’s Power Query Editor** for **real-time predictions**.
+- **Data Processing & Feature Engineering:** Prepares **NBA datasets (sourced from Kaggle & official NBA statistics)** for accurate modeling.
 
-• Power BI (Visualization and dashboarding)
+## Tech Stack
+- **Python**: Pandas, NumPy, TensorFlow, Matplotlib
+- **Flask**: Backend for real-time analytics
+- **Frontend**: HTML, CSS, JavaScript (Power BI integration)
+- **Power BI**: Visualization and dashboarding
+
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/VaishnaviUnnikrishnan/Dunklytics_NBA_Dashboard.git
+   cd NBA_LSTM_Analysis
+   ```
+2. Create and activate a virtual environment:
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # Mac/Linux
+   venv\Scripts\activate  # Windows
+   ```
+3. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. Run Flask application:
+   ```sh
+   python app.py
+   ```
+5. Load the Power BI dashboard and connect it to the Flask API for real-time predictions.
+
+## Contribution Guidelines
+- Fork the repository and create a new branch.
+- Implement necessary changes and commit with proper messages.
+- Push the branch and submit a pull request.
+
+## Future Enhancements
+- Expand predictive models to include **defensive metrics** and **advanced game strategy insights**.
+- Improve LSTM model accuracy with **hyperparameter tuning** and **additional data sources**.
+- Develop a **mobile-friendly dashboard** for real-time NBA analytics.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For inquiries, reach out to v.ukrishnan8@gmail.com.
+
+
 ![image](https://github.com/user-attachments/assets/499df214-8373-4ee5-98bf-89267ca01184)
 
 ![image](https://github.com/user-attachments/assets/24a04213-275e-42a3-a596-17c15a1bada9)
