@@ -32,7 +32,7 @@ This project leverages **machine learning (LSTM models)** and **business intelli
    ```
 3. Run Flask application:
    ```sh
-   python app.py
+   python main.py
    ```
 4. Load the Power BI dashboard and connect it to the Flask API for real-time predictions.
 
@@ -60,5 +60,14 @@ For inquiries, reach out to v.ukrishnan8@gmail.com.
 ![image](https://github.com/user-attachments/assets/596769fd-ece0-4e66-9da1-e36ff7c1b756)
 
 ![image](https://github.com/user-attachments/assets/6f167809-41d5-4521-b9f3-cc1a926bb684)
+
+![Screenshot 2025-03-15 184742](https://github.com/user-attachments/assets/0583f630-db2e-461a-a50b-9febad75c561)
+
+![image](https://github.com/user-attachments/assets/cd753c31-bbae-485d-b61b-60ad7b860751)
+
+![image](https://github.com/user-attachments/assets/474e824b-8b0e-4152-93cf-b2d0c2f4b08d)
+
+
+
 
 
